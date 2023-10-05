@@ -7,8 +7,7 @@ Le groupe se compose de 4 étudiants:
   * Ambroise Marché :monorail:
   * Henri Eloy :train:
 
-:alarm_clock:
-Ce projet vise à **prédire le temps de retard des TGV** à l'arrivée ainsi que **la raison de leur retard** le cas échéant, en se concentrant sur les trains réservés par la SNCF.
+Ce projet vise à **prédire le temps de retard des TGV** à l'arrivée ainsi que **la raison de leur retard** le cas échéant, en se concentrant sur les trains réservés par la SNCF.:alarm_clock:
 
 ## Obtention des Données
 
