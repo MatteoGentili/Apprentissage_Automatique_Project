@@ -1,12 +1,13 @@
-# Prédiction des Retards de TGV
+# Prédiction des Retards de TGV :bullettrain_side:
 _Projet 5ème année à CentraleSupelec sur le sujet suivant : Prédiction des retards de TGV_
 
 Le groupe se compose de 4 étudiants: 
-  * Matteo Gentili
-  * Agathe Poulain
-  * Ambroise Marché
-  * Henri Eloy
-    
+  * Matteo Gentili :train2:
+  * Agathe Poulain :light_rail:
+  * Ambroise Marché :monorail:
+  * Henri Eloy :train:
+
+:alarm_clock:
 Ce projet vise à **prédire le temps de retard des TGV** à l'arrivée ainsi que **la raison de leur retard** le cas échéant, en se concentrant sur les trains réservés par la SNCF.
 
 ## Obtention des Données
@@ -47,13 +48,13 @@ pip install -r requirements.txt
 
 Les objectifs du projet sont les suivants :
 
-1. Appliquer différentes approches vues en cours et en TD sur ce dataset pour prédire le temps de retard des trains à l'arrivée sur les 6 derniers mois (tous les mois de 2023), ainsi que les principales causes de ces retards (c’est-à-dire sur les différents pourcentages relevés dans le dataset). Le dataset de test correspondra donc aux mois de 2023, tandis que celui d'entraînement sera basé sur les données des années précédentes.
+1. Appliquer différentes approches vues en cours et en TD sur ce dataset pour prédire le temps de retard des trains à l'arrivée sur les 6 derniers mois (tous les mois de 2023), ainsi que les principales causes de ces retards (c’est-à-dire sur les différents pourcentages relevés dans le dataset). Le dataset de test correspondra donc aux mois de 2023, tandis que celui d'entraînement sera basé sur les données des années précédentes. :bar_chart:	
 
-2. Comparer les performances de ces différents modèles grâce aux métriques vues en cours.
+2. Comparer les performances de ces différents modèles grâce aux métriques vues en cours. :chart_with_upwards_trend:
 
-3. Conclure sur l'approche la plus appropriée pour prédire le retard des trains et les différentes causes.
+3. Conclure sur l'approche la plus appropriée pour prédire le retard des trains et les différentes causes. :clipboard:	
 
-4. Écrire un rapport d'environ 5 pages sur le travail effectué et les résultats obtenus.
+4. Écrire un rapport d'environ 5 pages sur le travail effectué et les résultats obtenus. :page_facing_up:	
 
 
 
