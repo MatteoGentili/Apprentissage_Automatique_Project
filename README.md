@@ -1,5 +1,5 @@
 # Prédiction des Retards de TGV :bullettrain_side:
-_Projet 5ème année à CentraleSupelec sur le sujet suivant : Prédiction des retards de TGV_
+_Projet 3ème année à CentraleSupelec sur le sujet suivant : Prédiction des retards de TGV_
 
 Le groupe se compose de 4 étudiants: 
   * Matteo Gentili :train2:
