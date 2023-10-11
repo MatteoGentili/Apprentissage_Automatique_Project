@@ -1,11 +1,11 @@
-# Prédiction des Retards de TGV :bullettrain_side:
+# Prédiction des Retards de TGV :train:
 _Projet 3ème année à CentraleSupelec sur le sujet suivant : Prédiction des retards de TGV_
 
 Le groupe se compose de 4 étudiants: 
   * Matteo Gentili :train2:
   * Agathe Poulain :light_rail:
   * Ambroise Marché :monorail:
-  * Henri Eloy :train:
+  * Henri Eloy :bullettrain_side:
 
 Ce projet vise à **prédire le temps de retard des TGV** à l'arrivée ainsi que **la raison de leur retard** le cas échéant, en se concentrant sur les trains réservés par la SNCF.:alarm_clock:
 
