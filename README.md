@@ -1,4 +1,4 @@
-# Prédiction des Retards de TGV :train:
+# Prédiction des Retards de TGV :railway_track:
 _Projet 3ème année à CentraleSupelec sur le sujet suivant : Prédiction des retards de TGV_
 
 Le groupe se compose de 4 étudiants: 
