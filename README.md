@@ -57,3 +57,42 @@ Les objectifs du projet sont les suivants :
 
 
 
+# Projet TGV - Classification avec des Modèles d'Ensemble
+
+## Introduction
+Dans cette étude, des modèles de classification ont été sélectionnés et entraînés en utilisant sept algorithmes : Régression Logistique, K-Nearest Neighbor (KNN), Naïve Bayes Gaussien, Arbre de Décision, Machine à Vecteurs de Support (SVM), Forêt Aléatoire et Arbre Boosté par Gradient. Les cinq premiers de ces algorithmes sont appelés des classifieurs de base car un seul modèle de classifieur est entraîné pour chacun d'entre eux. Les deux autres algorithmes sont appelés classifieurs d'ensemble car plus d'une instance de classifieurs de base est entraînée, et leur décision collective est rapportée comme la prédiction finale. En tant que deux des algorithmes d'ensemble les plus populaires, la Forêt Aléatoire et l'Arbre Boosté par Gradient combinent plusieurs modèles individuels pour améliorer les performances en termes de précision et de variance réduite.
+
+### Régression Logistique
+La Régression Logistique est un modèle de classification linéaire qui est couramment utilisé pour prédire une variable cible binaire. Elle modélise la relation entre les variables indépendantes et la probabilité d'appartenance à une classe particulière. La régression logistique est basée sur la fonction logistique qui transforme une combinaison linéaire des variables indépendantes en une valeur entre 0 et 1, représentant la probabilité. Elle est un choix fréquent pour la classification binaire.
+
+### K-Nearest Neighbor (KNN)
+K-Nearest Neighbor est un algorithme de classification basé sur la proximité des données. Il attribue une classe à une nouvelle donnée en fonction des classes de ses voisins les plus proches. KNN repose sur une métrique de distance pour déterminer la similarité entre les données. Le paramètre "K" représente le nombre de voisins à considérer, et la classe majoritaire parmi les K voisins est attribuée à la nouvelle donnée.
+
+### Naïve Bayes Gaussien
+Le Naïve Bayes Gaussien est un algorithme de classification basé sur le théorème de Bayes. Il est particulièrement adapté aux données où les caractéristiques suivent une distribution gaussienne (normale). Il calcule la probabilité qu'une donnée appartienne à une classe donnée en utilisant les probabilités conditionnelles des caractéristiques. Il suppose que les caractéristiques sont indépendantes, d'où le terme "naïve."
+
+### Arbre de Décision
+L'Arbre de Décision est un modèle de classification qui divise récursivement les données en sous-ensembles en fonction de critères de séparation. Chaque nœud de l'arbre représente une caractéristique, et les branches représentent les décisions basées sur cette caractéristique. Les feuilles de l'arbre contiennent les classes prédites. Les arbres de décision sont faciles à interpréter et peuvent gérer des données catégorielles et numériques.
+
+### Forêt Aléatoire
+La Forêt Aléatoire est composée de différents arbres de décision qui sélectionnent l'attribut approprié pour un nœud en commençant par la racine et séparent les données en sous-ensembles en fonction de l'attribut sélectionné. Elle utilise la méthode du bagging et des modèles individuels d'arbres de décision. Les données entraînées sont divisées en sous-ensembles aléatoires, et chacun a son arbre de décision. Les données sont fournies en parallèle à tous les arbres de la forêt, et la classe prédite par la plupart des arbres est attribuée aux nouvelles données.
+
+### Arbre Boosté par Gradient
+L'Arbre Boosté par Gradient n'a qu'un seul arbre de décision au départ, qui représente la prédiction initiale pour chaque donnée d'entraînement. Il utilise une méthode de boosting, ce qui signifie que les modèles individuels sont formés séquentiellement. Un arbre est construit, et sa prédiction est évaluée en fonction de ses erreurs résiduelles. Par conséquent, chaque modèle d'arbre apprend des erreurs commises par le modèle précédent. La construction de nouveaux arbres s'arrête lorsqu'un arbre supplémentaire ne peut pas améliorer la prédiction. Les données sont fournies le long d'un seul arbre racine.
+
+## Méthodes d'Évaluation
+La performance du classifieur peut être calculée à partir de la matrice de confusion. Après avoir été comparés au résultat réel, les résultats du classifieur peuvent générer quatre valeurs :
+
+- Vrai Positif (TP) : la valeur prédite est positive ; la valeur réelle est positive.
+- Vrai Négatif (TN) : la valeur prédite est négative ; la valeur réelle est négative.
+- Faux Positif (FP) : la valeur prédite est positive ; la valeur réelle est négative.
+- Faux Négatif (FN) : la valeur prédite est négative ; la valeur réelle est positive.
+
+Quatre mesures ont été utilisées pour évaluer la performance des algorithmes sélectionnés :Accuracy,Precision, Recall, F1 score. Ces mesures sont toutes liées positivement à la qualité des algorithmes. Par conséquent, pour un algorithme spécifique, plus les valeurs de ces mesures sont élevées, meilleures sont ses performances.
+
+Les valeurs des quatre mesures peuvent être obtenues par des calculs en utilisant ces paramètres :
+- Accuracy = (TP + TN) / (TP + TN + FP + FN)
+- Precision = TP / (TP + FP)
+- Recall = TP / (TP + FN)
+- F1 Score = 2 * Recall * Precision / (Recall + Precision) 
+
