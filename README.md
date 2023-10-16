@@ -56,4 +56,3 @@ Les objectifs du projet sont les suivants :
 4. Écrire un rapport d'environ 5 pages sur le travail effectué et les résultats obtenus. :page_facing_up:	
 
 
-
