@@ -10,7 +10,9 @@ import folium
 
 
 ######################################
-## Var for get_gare_coordinates ######
+####                              ####
+#### Var for get_gare_coordinates ####
+####                              ####
 ######################################
 gares = [
         "Paris-Lyon", "Paris-Montparnasse", "Paris-Nord", "Tourcoing", "Paris-Vaugirard", "Paris-Est", "Lyon-Part-Dieu",
@@ -28,7 +30,9 @@ url = "https://www.coordonnees-gps.fr/communes/paris-/75100"
 
 
 ######################################
-## Var for update_gare_names ######
+#####                           ######
+##### Var for update_gare_names ######
+#####                           ######
 ######################################
 
 gares_liste = ['PARIS LYON', 'PARIS MONTPARNASSE', 'PARIS NORD', 'TOURCOING', 'PARIS VAUGIRARD', 'PARIS EST',
@@ -185,7 +189,11 @@ def visualisation_coord(input_file,output_file):
 
 
 
-
+######################################
+####                              ####
+####     Lancement fonctions      ####
+####                              ####
+######################################
 
 get_gare_coordinates(gares, url, r'Python_files\csv_files\coord_gps_gares.csv')
 update_gare_names(r"Python_files\csv_files\coord_gps_gares.csv",r"Python_files\csv_files\coord_gps_gares_mis_a_jour.csv",gares_liste)
