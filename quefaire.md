@@ -1,0 +1,20 @@
+
+# 1ere Etape: 
+  Compréhension de ce qu'il faut faire:  
+  " Faut-il traduire les retards ?, la moyenne ? , le pourcentage de retard ?"
+
+  CSV : 
+  **retard_moyen_départ:** retard moyen au départ des trains en retard
+  **retard_moyen_tous_trains_depart:** retard moyen au départ de tous les trains [On distribue le retard des trains en retard sur tous les trains (même ceux pas en retard)
+
+  A faire : matrice de corrélation. 
+
+
+
+# Ce qu'il faut faire : 16/10/2023
+
+  - Analyse sur les pourcentages de la bdd tableaux etc etc
+  - Nettoyer la bdd 
+  - Effectuer la matrice de corrélation => trouver le moyen de montrer que les données sont corrélés et qu'il faudra faire des choix dans la selection des données. 
+  - Effectuer les prémices ou plus des modèles : Régression Logistique, K-Nearest Neighbor (KNN), Naïve Bayes Gaussien, Arbre de Décision, Machine à Vecteurs de Support (SVM), Forêt Aléatoire et Arbre Boosté par Gradient.
+  - ...
