@@ -75,30 +75,36 @@ def demande_trajet_user(path_gare):
                     gare_arrivee_choisie = gares_arrivee_uniques[choix - 1]
                     # Demander à l'utilisateur de choisir une date au format "année-mois" (par exemple, "2018-01")
                     while True:
-                        date_user = input("Entrez la date au format 'année-mois' (par exemple, '2018-01') : ").strip()
+                        date_user = input("Entrez la date au format 'année-mois' (compris entre 2023-01 et 2023-06) : ").strip()
 
                         # Vérifier que la date est au bon format (année-mois)
                         try:
                             year, month = map(int, date_user.split('-'))
-                            if (1 <= month <= 12 and year > datetime.now().year) or (year == datetime.now().year and month > datetime.now().month):
+                            if (1 <= month <= 6 and year == 2023):
                                 break  # Date valide
                             else:
-                                print("Date invalide ou antérieure à la date actuelle. Essayez à nouveau.")
+                                print("Date invalide. Essayez à nouveau.")
                         except ValueError:
-                            print("Format de date incorrect. Utilisez le format 'année-mois' (par exemple, '2018-01').")
+                            print("Format de date incorrect. Utilisez le format 'année-mois' (compris entre '2023-01' et '2023-06').")
                     filtre_trajet = (df_retard_gares['gare_depart'].str.lower() == gare_depart_correspondante.lower()) & \
                                     (df_retard_gares['gare_arrivee'].str.lower() == gare_arrivee_choisie.lower())
                     durees_moyennes = df_retard_gares.loc[filtre_trajet, 'duree_moyenne']
+                    nb_trains_moyen = df_retard_gares.loc[filtre_trajet, 'nb_train_prevu']
                     if not durees_moyennes.empty:
                         somme_durees = durees_moyennes.sum()
                         moyenne_duree = somme_durees / len(durees_moyennes)
                         heure=int(moyenne_duree//60)
                         minute=int(moyenne_duree%60)
-                    
+                    if not nb_trains_moyen.empty:
+                        somme_nb_trains_moyen = nb_trains_moyen.sum()
+                        moyenne_nb_trains_moyen = int(somme_nb_trains_moyen / len(nb_trains_moyen))
+
                     # Maintenant, vous pouvez utiliser la date choisie pour effectuer des opérations supplémentaires
                     print(f"\nVous avez choisi comme trajet : {gare_depart_correspondante} - {gare_arrivee_choisie}")
                     print(f"Pour la date : {date_user}")
                     print(f"Le trajet durera en moyenne : {heure} heures et {minute} minutes\n")
+
+                    print(f"à enlever/ nb trains prévus en moyenne : {moyenne_nb_trains_moyen}")
 
                     break  # Sortir de la boucle
                 else:
@@ -109,6 +115,7 @@ def demande_trajet_user(path_gare):
         print("Aucune gare d'arrivée trouvée depuis", gare_depart_correspondante)
 
     print('Prédisons le retard pour votre trajet ....\n')
+
 
 
 path_gare = r'Python_files\csv_files\regularite-mensuelle-tgv-aqst.csv'
