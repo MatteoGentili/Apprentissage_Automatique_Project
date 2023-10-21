@@ -71,7 +71,7 @@ Les séries temporelles sont des données chronologiques mesurées à des interv
 ### Forêt Aléatoire : Quand les Arbres Deviennent une Forêt pour des Prédictions Fiables
 La Forêt Aléatoire est composée de différents arbres de décision qui sélectionnent l'attribut approprié pour un nœud en commençant par la racine et séparent les données en sous-ensembles en fonction de l'attribut sélectionné. Elle utilise la méthode du bagging et des modèles individuels d'arbres de décision. Les données entraînées sont divisées en sous-ensembles aléatoires, et chacun a son arbre de décision. Les données sont fournies en parallèle à tous les arbres de la forêt, et la classe prédite par la plupart des arbres est attribuée aux nouvelles données.
 
-### ACP : Analyse en Composantes Principales (ACP) : Réduire la Complexité, Révéler les Tendances
+### Analyse en Composantes Principales (ACP) : Réduire la Complexité, Révéler les Tendances
 L'Analyse en Composantes Principales (ACP) est une technique d'exploration de données qui simplifie des ensembles complexes de données en identifiant les variables les plus significatives et en les réduisant à un petit nombre de composantes principales. L'objectif est de conserver l'essentiel de l'information tout en éliminant le bruit. En appliquant l'ACP aux données, on peut révéler des tendances cachées, des relations et des structures, ce qui facilite la prise de décisions éclairées. L'ACP est couramment utilisée dans des domaines tels que la finance, la biologie, et l'analyse de séries temporelles pour extraire des informations cruciales à partir de données complexes.
 
 ## Méthodes d'Évaluation
