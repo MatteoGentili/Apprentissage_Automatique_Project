@@ -26,12 +26,9 @@ Pour visualiser les données avant de les traiter avec Python, nous utiliserons 
 
 Assurez-vous d'avoir Python installé sur votre système. Vous pouvez utiliser un environnement virtuel pour gérer les dépendances de ce projet. Voici comment créer un environnement virtuel avec Python 3 :
 
-```bash
-python3 -m venv env
-source env/bin/activate  # Pour activer l'environnement virtuel (sous Linux/macOS)
-```
 
-Ensuite, installez les dépendances requises en exécutant la commande suivante :
+
+Installez les dépendances requises en exécutant la commande suivante :
 
 ```bash
 pip install -r requirements.txt
@@ -39,9 +36,9 @@ pip install -r requirements.txt
 
 ## Structure du Projet (à changer lors de la communication de la structure)
 
-- `data/`: Répertoire pour stocker les données téléchargées.
-- `src/`: Répertoire pour le code source Python du projet.
-- `reports/`: Répertoire pour stocker les rapports et résultats.
+- `.vscode/`: Répertoire pour vscode.
+- `Python_files/`: Répertoire pour le code source Python du projet.
+- `csv_files/`: Répertoire pour stocker les csv.
 
 ## Objectifs du Projet
 
