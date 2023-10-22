@@ -98,9 +98,9 @@ MSE = (1/n) Σ (yᵢ - ŷᵢ)²
 
 Où :
 
-n est le nombre d'exemples de test.
-yᵢ est la valeur réelle du retard pour le i-ème exemple.
-ŷᵢ est la valeur prédite du retard pour le i-ème exemple.
+**n** est le nombre d'exemples de test.  
+**yᵢ** est la valeur réelle du retard pour le i-ème exemple.  
+**ŷᵢ** est la valeur prédite du retard pour le i-ème exemple.  
 Une MSE plus faible indique une meilleure adéquation du modèle aux données, c'est-à-dire que les prédictions du modèle se rapprochent davantage des valeurs réelles.
 
 Root Mean Squared Error (RMSE)
