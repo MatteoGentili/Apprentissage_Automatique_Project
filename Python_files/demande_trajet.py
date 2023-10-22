@@ -5,6 +5,7 @@
 ######################################
 import pandas as pd
 from datetime import datetime
+from joblib import load
 ######################################
 ######################################
 ############ Variables ###############
@@ -116,7 +117,28 @@ def demande_trajet_user(path_gare):
 
     print('Prédisons le retard pour votre trajet ....\n')
 
+    get_pred(path_clean, gare_depart_correspondante, gare_arrivee_choisie, year, month, moyenne_nb_trains_moyen)
 
 
-path_gare = r'Python_files\csv_files\regularite-mensuelle-tgv-aqst.csv'
+def get_pred(path_df, gare_depart, gare_arrivee, year, month, nb_train_moyen):
+
+    df=pd.read_csv(path_df)
+
+    model_knn = load(r"C:\Users\henri\Desktop\CS\ML\Apprentissage_Automatique_Project\Python_files\modele_knn.joblib")
+
+    data_to_predict = df.loc[
+        (df["annee"] == year) &
+        (df["mois"] == month) &
+        (df["DEPART_" + gare_depart]) &
+        (df["ARRIVEE_" + gare_arrivee])
+    ]
+
+    # Utilisez le modèle K-NN pour effectuer une prédiction
+    prediction_retard = model_knn.predict(data_to_predict)
+    # La variable 'prediction_retard' contiendra la prédiction du retard moyen
+    print(prediction_retard[0])
+
+
+path_gare = r'C:\Users\henri\Desktop\CS\ML\Apprentissage_Automatique_Project\Python_files\csv_files\regularite-mensuelle-tgv-aqst.csv'
+path_clean = r'C:\Users\henri\Desktop\CS\ML\Apprentissage_Automatique_Project\Python_files\csv_files\pred_retard.csv'
 demande_trajet_user(path_gare)
