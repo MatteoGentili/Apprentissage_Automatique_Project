@@ -59,7 +59,17 @@ Les objectifs du projet sont les suivants :
 # Projet TGV - Classification avec des Modèles d'Ensemble
 
 ## Introduction
-Dans cette étude, des modèles de classification ont été sélectionnés et entraînés en utilisant sept algorithmes : 
+L'utilisation de la régression est cruciale dans le contexte de la prédiction des retards des TGV. Les problèmes de retard des trains sont essentiellement des problèmes de régression, car ils impliquent la prédiction d'une valeur numérique (le temps de retard) en fonction de diverses caractéristiques et variables indépendantes. Voici quelques raisons pour lesquelles la régression est appropriée pour ce type de prédiction :
+
+1. **Nature continue des retards** : Les retards des TGV sont généralement des valeurs continues, mesurées en minutes. Par conséquent, il est naturel d'appliquer des techniques de régression pour prédire ces valeurs continues.
+
+2. **Relation complexe entre les caractéristiques et les retards** : Les retards des trains peuvent être influencés par de nombreuses variables, telles que la période de l'année, les gares de départ et d'arrivée, les conditions météorologiques, la capacité des trains, etc. La régression permet de modéliser ces relations complexes en capturant les effets de multiples variables indépendantes.
+
+3. **Prédiction de la quantité de retard** : L'objectif principal est de prédire la quantité de retard, ce qui est une tâche de régression. Les passagers et les gestionnaires de réseau ferroviaire sont intéressés par des prévisions précises du temps de retard pour prendre des mesures appropriées.
+
+4. **Évaluation des performances** : Les modèles de régression permettent d'évaluer les performances en utilisant des métriques spécifiques, telles que la MSE (Mean Squared Error) ou le RMSE (Root Mean Squared Error), qui mesurent l'écart entre les valeurs prédites et les valeurs réelles de retard. Ces métriques sont importantes pour évaluer la qualité des modèles.
+
+Ainsi, la régression est un choix naturel pour ce projet, car elle permet de prédire de manière quantitative les retards des TGV en fonction des caractéristiques du trajet, des conditions météorologiques et d'autres facteurs pertinents. L'utilisation d'autres algorithmes de régression, tels que le K-Nearest Neighbor (KNN) et la Forêt Aléatoire, peut également être explorée pour déterminer quel modèle offre les meilleures performances prédictives.
 
 
 ### K-Nearest Neighbor (KNN) : Voisinage pour la Classification et la Régression
@@ -74,19 +84,31 @@ La Forêt Aléatoire est composée de différents arbres de décision qui sélec
 ### Analyse en Composantes Principales (ACP) : Réduire la Complexité, Révéler les Tendances
 L'Analyse en Composantes Principales (ACP) est une technique d'exploration de données qui simplifie des ensembles complexes de données en identifiant les variables les plus significatives et en les réduisant à un petit nombre de composantes principales. L'objectif est de conserver l'essentiel de l'information tout en éliminant le bruit. En appliquant l'ACP aux données, on peut révéler des tendances cachées, des relations et des structures, ce qui facilite la prise de décisions éclairées. L'ACP est couramment utilisée dans des domaines tels que la finance, la biologie, et l'analyse de séries temporelles pour extraire des informations cruciales à partir de données complexes.
 
-## Méthodes d'Évaluation
-La performance du classifieur peut être calculée à partir de la matrice de confusion. Après avoir été comparés au résultat réel, les résultats du classifieur peuvent générer quatre valeurs :
+Méthodes d'Évaluation
+L'évaluation de la performance des modèles de régression dans ce projet repose sur des métriques spécifiques adaptées à la nature continue des retards des TGV. Deux métriques clés largement utilisées sont la MSE (Mean Squared Error) et la RMSE (Root Mean Squared Error).
 
-- Vrai Positif (TP) : la valeur prédite est positive ; la valeur réelle est positive.
-- Vrai Négatif (TN) : la valeur prédite est négative ; la valeur réelle est négative.
-- Faux Positif (FP) : la valeur prédite est positive ; la valeur réelle est négative.
-- Faux Négatif (FN) : la valeur prédite est négative ; la valeur réelle est positive.
+Mean Squared Error (MSE)
+La MSE est une métrique fondamentale qui mesure l'erreur quadratique moyenne entre les valeurs prédites par le modèle et les valeurs réelles. Plus précisément, pour chaque exemple de test, la MSE calcule la différence entre la valeur prédite et la valeur réelle, élève cette différence au carré pour éviter des annulations positives et négatives, puis prend la moyenne de ces carrés.
 
-Quatre mesures ont été utilisées pour évaluer la performance des algorithmes sélectionnés :Accuracy,Precision, Recall, F1 score. Ces mesures sont toutes liées positivement à la qualité des algorithmes. Par conséquent, pour un algorithme spécifique, plus les valeurs de ces mesures sont élevées, meilleures sont ses performances.
+Formellement, la MSE peut être calculée comme suit :
 
-Les valeurs des quatre mesures peuvent être obtenues par des calculs en utilisant ces paramètres :
-- Accuracy = (TP + TN) / (TP + TN + FP + FN)
-- Precision = TP / (TP + FP)
-- Recall = TP / (TP + FN)
-- F1 Score = 2 * Recall * Precision / (Recall + Precision) 
+MSE = (1/n) Σ (yᵢ - ŷᵢ)²
+
+Où :
+
+n est le nombre d'exemples de test.
+yᵢ est la valeur réelle du retard pour le i-ème exemple.
+ŷᵢ est la valeur prédite du retard pour le i-ème exemple.
+Une MSE plus faible indique une meilleure adéquation du modèle aux données, c'est-à-dire que les prédictions du modèle se rapprochent davantage des valeurs réelles.
+
+Root Mean Squared Error (RMSE)
+Le RMSE est une métrique dérivée de la MSE, qui est plus interprétable car elle est exprimée dans la même unité que la variable que nous essayons de prédire (dans ce cas, les minutes de retard). Le RMSE est simplement la racine carrée de la MSE, ce qui revient à annuler l'opération d'élévation au carré effectuée dans la MSE.
+
+Formellement, le RMSE peut être calculé comme suit :
+
+RMSE = √MSE
+
+Le RMSE est particulièrement utile pour évaluer la précision des prédictions en termes de temps de retard, car il indique en moyenne à quel point les prédictions du modèle sont éloignées de la réalité en minutes.
+
+Ces métriques permettent d'évaluer la performance des modèles de régression en tenant compte de la nature continue des retards des TGV. Plus le RMSE est faible, plus le modèle est capable de prédire avec précision les retards, ce qui est essentiel pour fournir des informations utiles aux passagers et aux gestionnaires de réseau ferroviaire.
 
