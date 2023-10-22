@@ -72,16 +72,16 @@ L'utilisation de la régression est cruciale dans le contexte de la prédiction 
 Ainsi, la régression est un choix naturel pour ce projet, car elle permet de prédire de manière quantitative les retards des TGV en fonction des caractéristiques du trajet, des conditions météorologiques et d'autres facteurs pertinents. L'utilisation d'autres algorithmes de régression, tels que le K-Nearest Neighbor (KNN) et la Forêt Aléatoire, peut également être explorée pour déterminer quel modèle offre les meilleures performances prédictives.
 
 
-### K-Nearest Neighbor (KNN) : Voisinage pour la Classification et la Régression
+### [K-Nearest Neighbor KNN](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html) : Voisinage pour la Classification et la Régression
 K-Nearest Neighbor est un algorithme de classification basé sur la proximité des données. Il attribue une classe à une nouvelle donnée en fonction des classes de ses voisins les plus proches. KNN repose sur une métrique de distance pour déterminer la similarité entre les données. Le paramètre "K" représente le nombre de voisins à considérer, et la classe majoritaire parmi les K voisins est attribuée à la nouvelle donnée.
 
-### TimeSeries : Analyser le Passé, Prédire l'Avenir
+### [TimeSeries](https://pandas.pydata.org/docs/user_guide/timeseries.html) : Analyser le Passé, Prédire l'Avenir
 Les séries temporelles sont des données chronologiques mesurées à des intervalles réguliers ou irréguliers. Elles sont utilisées pour comprendre les modèles et les tendances passées, ainsi que pour prédire des événements futurs. Les séries temporelles sont couramment utilisées dans des domaines tels que la finance, la météorologie et la gestion de la chaîne d'approvisionnement. L'analyse des séries temporelles nécessite des techniques spécifiques pour tenir compte de la dépendance temporelle entre les observations. Elle est cruciale pour la prise de décisions éclairées et la prévision dans de nombreux contextes.
 
-### Forêt Aléatoire : Quand les Arbres Deviennent une Forêt pour des Prédictions Fiables
+### [Forêt Aléatoire](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html) : Quand les Arbres Deviennent une Forêt pour des Prédictions Fiables
 La Forêt Aléatoire est composée de différents arbres de décision qui sélectionnent l'attribut approprié pour un nœud en commençant par la racine et séparent les données en sous-ensembles en fonction de l'attribut sélectionné. Elle utilise la méthode du bagging et des modèles individuels d'arbres de décision. Les données entraînées sont divisées en sous-ensembles aléatoires, et chacun a son arbre de décision. Les données sont fournies en parallèle à tous les arbres de la forêt, et la classe prédite par la plupart des arbres est attribuée aux nouvelles données.
 
-### Analyse en Composantes Principales (ACP) : Réduire la Complexité, Révéler les Tendances
+### [Analyse en Composantes Principales (ACP)](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html) : Réduire la Complexité, Révéler les Tendances
 L'Analyse en Composantes Principales (ACP) est une technique d'exploration de données qui simplifie des ensembles complexes de données en identifiant les variables les plus significatives et en les réduisant à un petit nombre de composantes principales. L'objectif est de conserver l'essentiel de l'information tout en éliminant le bruit. En appliquant l'ACP aux données, on peut révéler des tendances cachées, des relations et des structures, ce qui facilite la prise de décisions éclairées. L'ACP est couramment utilisée dans des domaines tels que la finance, la biologie, et l'analyse de séries temporelles pour extraire des informations cruciales à partir de données complexes.
 
 Méthodes d'Évaluation
@@ -92,7 +92,9 @@ La MSE est une métrique fondamentale qui mesure l'erreur quadratique moyenne en
 
 Formellement, la MSE peut être calculée comme suit :
 
+```math
 MSE = (1/n) Σ (yᵢ - ŷᵢ)²
+```
 
 Où :
 
@@ -106,8 +108,9 @@ Le RMSE est une métrique dérivée de la MSE, qui est plus interprétable car e
 
 Formellement, le RMSE peut être calculé comme suit :
 
-RMSE = √MSE
-
+```math
+RMSE = \sqrt{MSE}
+```
 Le RMSE est particulièrement utile pour évaluer la précision des prédictions en termes de temps de retard, car il indique en moyenne à quel point les prédictions du modèle sont éloignées de la réalité en minutes.
 
 Ces métriques permettent d'évaluer la performance des modèles de régression en tenant compte de la nature continue des retards des TGV. Plus le RMSE est faible, plus le modèle est capable de prédire avec précision les retards, ce qui est essentiel pour fournir des informations utiles aux passagers et aux gestionnaires de réseau ferroviaire.
