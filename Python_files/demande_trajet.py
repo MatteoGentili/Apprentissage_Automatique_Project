@@ -5,15 +5,9 @@
 ######################################
 import pandas as pd
 from datetime import datetime
-######################################
-######################################
-############ Variables ###############
-######################################
-######################################
+from joblib import load
 
-
-
-def demande_trajet_user(path_gare):
+def demande_trajet_user(path_gare,path_clean, path_model_knn):
     df_retard_gares = pd.read_csv(path_gare, sep=';')
 
     noms_gares = df_retard_gares['gare_depart'].unique()
@@ -104,7 +98,9 @@ def demande_trajet_user(path_gare):
                     print(f"Pour la date : {date_user}")
                     print(f"Le trajet durera en moyenne : {heure} heures et {minute} minutes\n")
 
-                    print(f"à enlever/ nb trains prévus en moyenne : {moyenne_nb_trains_moyen}")
+                    print('Prédisons le retard pour votre trajet ....\n')
+
+                    get_pred(path_clean,path_model_knn, gare_depart_correspondante, gare_arrivee_choisie, year, month, moyenne_nb_trains_moyen)
 
                     break  # Sortir de la boucle
                 else:
@@ -114,9 +110,30 @@ def demande_trajet_user(path_gare):
     else:
         print("Aucune gare d'arrivée trouvée depuis", gare_depart_correspondante)
 
-    print('Prédisons le retard pour votre trajet ....\n')
+    
 
 
+def get_pred(path_df,path_model_knn, gare_depart, gare_arrivee, year, month, nb_train_moyen):
 
-path_gare = r'Python_files\csv_files\regularite-mensuelle-tgv-aqst.csv'
-demande_trajet_user(path_gare)
+    df=pd.read_csv(path_df)
+
+    model_knn = load(path_model_knn)
+
+    data_to_predict = df.loc[
+        (df["annee"] == year) &
+        (df["mois"] == month) &
+        (df["DEPART_" + gare_depart]) &
+        (df["ARRIVEE_" + gare_arrivee])
+    ]
+
+    # Utilisez le modèle K-NN pour effectuer une prédiction
+    prediction_retard = model_knn.predict(data_to_predict)
+    # La variable 'prediction_retard' contiendra la prédiction du retard moyen
+    seconds = (prediction_retard[0] - int(prediction_retard[0])) % 0.60
+    secondsSupmin= (prediction_retard[0] - int(prediction_retard[0])) // 0.60
+    
+    minutes = int(prediction_retard[0]+secondsSupmin)
+    
+    print("Vous aurez ",minutes,"minutes et",int(seconds*100),"secondes de retard en moyenne pour votre trajet")
+
+
