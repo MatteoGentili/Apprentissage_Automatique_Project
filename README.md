@@ -9,7 +9,8 @@ Le groupe se compose de 4 étudiants:
 
 Ce projet vise à **prédire le temps de retard des TGV** à l'arrivée ainsi que **la raison de leur retard** le cas échéant, en se concentrant sur les trains réservés par la SNCF.:alarm_clock:
 
-![a]([https://i.gifer.com/AHRo.gif](https://media.giphy.com/media/l1g3RddMFNWNcJ1wiD/giphy.gif))  
+![Alt Text](https://media.giphy.com/media/efIrkErawcqWIN5RKL/giphy.gif)
+
 ## Obtention des Données
 
 Les données nécessaires pour ce projet peuvent être obtenues en suivant ces étapes :
