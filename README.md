@@ -1,5 +1,7 @@
 # Prédiction des Retards de TGV :railway_track:
 _Projet 3ème année à CentraleSupelec sur le sujet suivant : Prédiction des retards de TGV_
+![Alt Text](https://media.giphy.com/media/efIrkErawcqWIN5RKL/giphy.gif)
+
 
 Le groupe se compose de 4 étudiants: 
   * Matteo Gentili :train2:
@@ -8,8 +10,6 @@ Le groupe se compose de 4 étudiants:
   * Henri Eloy :bullettrain_side:
 
 Ce projet vise à **prédire le temps de retard des TGV** à l'arrivée ainsi que **la raison de leur retard** le cas échéant, en se concentrant sur les trains réservés par la SNCF.:alarm_clock:
-
-![Alt Text](https://media.giphy.com/media/efIrkErawcqWIN5RKL/giphy.gif)
 
 ## Obtention des Données
 
